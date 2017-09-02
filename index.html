@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Monster Attack</title>
+    <link rel="stylesheet" href="style-attack.css">
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+</head>
+<body>
+    <div id="monster">
+        <div class="progress-bars margin-10">
+            <div class="you margin-10">
+                <h1>YOU</h1>
+                <div class="progress-bar" :style="youProgressBar">{{youHealth}}</div>
+            </div>
+
+            <div class="monster margin-10">
+                <h1>MONSTER</h1>
+                <div class="progress-bar" :style="monsterProgressBar">{{monsterHealth}}</div>
+            </div>
+        </div>
+        <div class="buttons margin-10">
+            <button v-show="!gameStarted" @click="startNewGame">START NEW GAME</button>
+            <button v-show="gameStarted" @click="doAttack">ATTACK</button>
+            <button v-show="gameStarted" @click="doSpecialAttack">SPECIAL ATTACK</button>
+            <button v-show="gameStarted" @click="doHeal" :disabled="youHealth >= 100">HEAL</button>
+            <button v-show="gameStarted" @click="doGiveUp">GIVE UP</button>
+        </div>
+        <hr>
+        <div class="attack-log margin-10" v-for="item in result"><span>{{item}}</span></div>
+    </div>
+
+    <script src="attack.js"></script>
+</body>
+</html>

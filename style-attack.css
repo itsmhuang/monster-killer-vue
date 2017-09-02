@@ -1,0 +1,26 @@
+html {
+    /*text-align: center;*/
+    font-family: sans-serif;
+    font-weight: 300;
+}
+
+.margin-10 {
+    margin: 10px;
+}
+
+.you {
+    display: inline-block;
+}
+
+.monster {
+    display: inline-block;
+}
+
+.progress-bar {
+    height: 30px;
+    background-color: green;
+    color: white;
+}
+
+
+
